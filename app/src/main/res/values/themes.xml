@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MindMath" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="textAllCaps">false</item>
+
+        <item name="android:statusBarColor">@color/dark_blue</item>
+
+        <item name="android:navigationBarColor">@color/tran_black</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+</resources>
