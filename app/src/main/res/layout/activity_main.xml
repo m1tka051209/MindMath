@@ -366,7 +366,6 @@
             android:clipToPadding="false"
             android:orientation="vertical"
             android:paddingBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@id/btn_navigation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -720,49 +719,4 @@
 
         </LinearLayout>
     </ScrollView>
-
-    <!-- Нижняя навигация -->
-    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-    <!--        android:id="@+id/btn_navigation"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent">-->
-
-    <!--        <Button-->
-    <!--            android:id="@+id/main_list"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:backgroundTint="@color/dark_blue"-->
-    <!--            android:text="@string/main_list"-->
-    <!--            app:cornerRadius="200dp"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--        <Button-->
-    <!--            android:id="@+id/tasks"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:backgroundTint="@color/gray"-->
-    <!--            android:text="@string/tasks"-->
-    <!--            app:cornerRadius="10dp"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintEnd_toStartOf="@+id/account"-->
-    <!--            app:layout_constraintStart_toEndOf="@+id/main_list"-->
-    <!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--        <Button-->
-    <!--            android:id="@+id/account"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:backgroundTint="@color/gray"-->
-    <!--            android:text="@string/account"-->
-    <!--            app:cornerRadius="10dp"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent" />-->
-    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>
