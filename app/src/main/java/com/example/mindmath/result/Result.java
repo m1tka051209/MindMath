@@ -1,8 +1,6 @@
-package com.example.mindmath;
+package com.example.mindmath.result;
 
-import java.util.List;
-
-public class BaseResult {
+public class Result {
     private int userId;
     private String mode;
     private int grade;
@@ -82,64 +80,3 @@ class Mistake {
     private int attemptsMade;
 }
 
-class TrainingResult extends BaseResult {
-    private int totalQuestions;
-    private int correctAnswers;
-
-    public int getTotalQuestions() {
-        return totalQuestions;
-    }
-
-    public void setTotalQuestions(int totalQuestions) {
-        this.totalQuestions = totalQuestions;
-    }
-
-    public int getCorrectAnswers() {
-        return correctAnswers;
-    }
-
-    public void setCorrectAnswers(int correctAnswers) {
-        this.correctAnswers = correctAnswers;
-    }
-
-    public List<Mistake> getMistakes() {
-        return mistakes;
-    }
-
-    public void setMistakes(List<Mistake> mistakes) {
-        this.mistakes = mistakes;
-    }
-
-    private List<Mistake> mistakes;
-}
-
-class HardResult extends BaseResult {
-    private int totalQuestions;
-
-    public int getMaxStreak() {
-        return maxStreak;
-    }
-
-    public void setMaxStreak(int maxStreak) {
-        this.maxStreak = maxStreak;
-    }
-
-    public int getTotalQuestions() {
-        return totalQuestions;
-    }
-
-    public void setTotalQuestions(int totalQuestions) {
-        this.totalQuestions = totalQuestions;
-    }
-
-    public long getDurationSeconds() {
-        return durationSeconds;
-    }
-
-    public void setDurationSeconds(long durationSeconds) {
-        this.durationSeconds = durationSeconds;
-    }
-
-    private int maxStreak;
-    private long durationSeconds;
-}

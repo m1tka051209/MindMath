@@ -1,6 +1,6 @@
-package com.example.mindmath;
+package com.example.mindmath.result;
 
-public class NormalResult extends BaseResult {
+public class NormalResult extends Result {
     private int totalQuestions;
 
     public int getCorrectAnswers() {

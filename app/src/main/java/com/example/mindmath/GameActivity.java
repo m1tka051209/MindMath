@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.mindmath.NormalResult;
+import com.example.mindmath.result.NormalResult;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,31 +31,26 @@ public class GameActivity extends AppCompatActivity {
 
         binding.btnTest.setOnClickListener(v -> {
             Toast.makeText(this, "Кнопка работает", Toast.LENGTH_SHORT).show();
-            NormalResult testResult = new NormalResult();
-            testResult.setUserId(1);
-            testResult.setMode("normal");
-            testResult.setGrade(2);
-            testResult.setTotalQuestions(10);
-            testResult.setCorrectAnswers(7);
-            testResult.setWrongAnswers(3);
-            testResult.setDurationSeconds(125);
-            testResult.setTimestamp(System.currentTimeMillis());
-
-            Call<Void> call = apiService.sendResult(testResult);
-            call.enqueue(new Callback<>() {
+            Person person = new Person();
+            person.setName("User");
+            person.setRole("user");
+            person.setLogin("user123");
+            person.setPassword("user123");
+            person.setTopResult("10");
+            Call<Person> call = apiService.createPerson(person);
+            call.enqueue(new Callback<Person>() {
                 @Override
-                public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
+                public void onResponse(Call<Person> call, Response<Person> response) {
                     if (response.isSuccessful()) {
-                        Toast.makeText(GameActivity.this, "Отправлено!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(GameActivity.this, "User created!", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(GameActivity.this, "Ошибка: " + response.code(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(GameActivity.this, "Error: " + response.code(), Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
-                public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
-                    Toast.makeText(GameActivity.this, "Не удалось отправить: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                    Log.d("sendResult", "onFailure: " + t.getMessage());
+                public void onFailure(Call<Person> call, Throwable t) {
+                    Toast.makeText(GameActivity.this, "Failed: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         });
